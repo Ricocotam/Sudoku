@@ -3,20 +3,23 @@ package Rotation;
 import java.util.ArrayList;
 
 public class Rotationons {
-	
+
 	private static boolean initialise = false;
 	private static ArrayList<IRotationGrille> types = new ArrayList<IRotationGrille>();
-	
-	
+
+
 	public static void rotationRandom(int grille[][]){
 		if(!initialise)
 			initialiserTypes();
-		
-		types.get((int)(Math.random() * /*24*/ 18 )).rotationnons(grille);
+
+		types.get((int)(Math.random() * 18 )).rotationnons(grille);
 	}
 
 
 	private static void initialiserTypes() {
+		// We could add Squares rotations
+		// But at the time I had this project (first year in computer science)
+		// I wasn't able to do it in time
 		types.add(new RotationColonne1_2());
 		types.add(new RotationColonne1_3());
 		types.add(new RotationColonne2_3());
@@ -35,12 +38,6 @@ public class Rotationons {
 		types.add(new RotationLigne7_8());
 		types.add(new RotationLigne7_9());
 		types.add(new RotationLigne8_9());
-		//types.add(new RotationLigneBloc1_2());
-		//types.add(new RotationLigneBloc1_3());
-		//types.add(new RotationLigneBloc2_3());
-		//types.add(new RotationColonneBloc1_2());
-		//types.add(new RotationColonneBloc1_3());
-		//types.add(new RotationColonneBloc2_3());
 		initialise = true;
 	}
 }
